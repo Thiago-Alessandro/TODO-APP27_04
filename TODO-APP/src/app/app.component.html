@@ -1,0 +1,31 @@
+<h1>TODO-APP</h1>
+
+<input placeholder="Nome" [(ngModel)]="tarefa.nome" >
+
+<select>
+<option (click)="setCategoria('TODO')">TODO</option>
+<option (click)="setCategoria('DOING')">DOING</option>
+<option (click)="setCategoria('DONE')">DONE</option>
+</select>
+
+<button (click)="cadastrarTarefa()">cadastrar</button>
+<br>
+
+<div *ngFor="let tarefa of tarefas; index as indice" >
+  
+  <br>
+
+  <button (click)="removerTarefa(indice)">remover</button>
+
+  <div class="tarefas">
+  
+   {{indice}} 
+
+   Descrição:  {{tarefa.nome}}
+
+   Categoria: {{categoria}}
+  
+  </div>
+
+</div>
+<br>
